@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ghostrider.application;
+package org.rmj.ghostrider.app;
 
-import ghostrider.GhostRider;
+import org.rmj.ghostrider.ui.GhostRider;
 import javafx.application.Application;
 import org.rmj.appdriver.GProperty;
 import org.rmj.appdriver.GRider;

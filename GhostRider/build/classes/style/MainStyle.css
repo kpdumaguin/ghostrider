@@ -1,0 +1,100 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 13, 2015, 12:29:52 AM
+    Author     : rifat
+*/
+
+/*******************************************************************************
+ *                                                                             *
+ * TextView                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.text-field{
+    -fx-border-width: 0.7px;
+    -fx-border-color: #000000;
+    -fx-border-radius: 60px;
+    -fx-background-radius: 60px;
+    -fx-text-fill: black;
+    -fx-font-size: 15px; 
+    -fx-padding: 5px 35px 5px 15px;
+    -fx-background-color: white;
+}
+.text-field:focused{
+    -fx-border-color: #F88222;
+
+}
+.text-field:hover{
+
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Combo Box                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.combo-box {
+    -fx-border-color:#000000;
+    -fx-border-width:1;
+    -fx-border-radius: 60px;
+    -fx-background-radius: 60px;
+    -fx-background-color:white;
+    -fx-prompt-text-fill: gray;
+    -fx-font-size: 15px; 
+}
+.combo-box:focused{
+    -fx-border-color: #F88222;
+
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ButtonView                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.button{
+    -fx-border-width: 0.5px;
+    -fx-border-color: #ACACAC;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-background-color: white;
+    -fx-font-size: 12px; 
+    -fx-padding: 8px 25px;
+    -fx-font-weight:700;
+    -fx-font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+}
+.button:hover{
+    -fx-background-color: #EA5444;
+    -fx-text-fill: white;
+
+}
+.button:focused{
+   -fx-border-width: 0.5px;
+    -fx-border-color: #ACACAC;
+   -fx-border-radius: 50px;
+/*    -fx-background-radius: 50px;
+    -fx-background-color: white;
+    -fx-font-size: 12px; 
+    -fx-padding: 8px 25px;
+    -fx-font-weight:700;
+    -fx-font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;*/
+}
+.button:pressed{
+    -fx-background-color: #EA5444;
+    -fx-text-fill: white;
+}
+#apDesignPane{
+    -fx-background-color: rgba(8, 0, 0, .1);
+    -fx-effect: dropshadow(three-pass-box, purple, 10, 0, 0, 0);
+}
+#apMother{
+    -fx-background-image: url("../image/background_large.png");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+}

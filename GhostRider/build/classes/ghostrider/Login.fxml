@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="780.0" style="-fx-border-color: #A4A4A4;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ghostrider.controller.LoginController">
+    <children>
+      <AnchorPane id="mainBackground" fx:id="mainBackground" prefHeight="480.0" prefWidth="390.0" stylesheets="@../style/MainStyle.css">
+         <children>
+            <Label layoutX="150.0" layoutY="230.0" text="GUANZON" textFill="#535353">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="107.0" layoutY="248.0" text="GhostRider" textFill="#535353" AnchorPane.topAnchor="248.0">
+               <font>
+                  <Font name="Roboto Light" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="131.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/grider.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="117.0" layoutY="418.0" text="Guanzon Group of Companies" textFill="#535353">
+               <font>
+                  <Font name="Roboto Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="101.0" layoutY="434.0" text=" @All right Reserved GMC - SEG 2021" textFill="#757575">
+               <font>
+                  <Font name="Roboto" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="115.0" layoutY="451.0" text="GhostRider v1.2.0 Build 1.0.0000" textFill="#757575">
+               <font>
+                  <Font name="Roboto" size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="363.0" prefHeight="480.0" prefWidth="390.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <TextField id="txtUserName" fx:id="txtUserName" layoutX="56.0" layoutY="173.0" prefHeight="30.0" prefWidth="283.0" promptText="Enter your username" stylesheets="@../style/login.css">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="56.0" layoutY="150.0" text="Username:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="56.0" layoutY="212.0" text="Password:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="335.0" text="Forgot Password?" textFill="#979797">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="57.0" layoutY="401.0" text="Create Account">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button id="btnLogin" fx:id="btnLogin" layoutX="210.0" layoutY="400.0" mnemonicParsing="false" onAction="#btnLogin" prefHeight="30.0" prefWidth="132.0" style="-fx-background-color: #F47422;" text="Login" textFill="#fffafa">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <PasswordField id="txtPassword" fx:id="txtPassword" layoutX="54.0" layoutY="237.0" prefHeight="30.0" prefWidth="283.0" promptText="Enter your password" stylesheets="@../style/login.css">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </PasswordField>
+            <Label layoutX="52.0" layoutY="274.0" text="Product:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ComboBox id="cboProduct" fx:id="cboProduct" layoutX="52.0" layoutY="297.0" prefHeight="33.0" prefWidth="283.0" promptText="Select product" stylesheets="@../style/login.css" />
+            <Button id="btnExit" fx:id="btnExit" focusTraversable="false" layoutX="374.0" layoutY="9.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="19.0" prefWidth="26.0" stylesheets="@../style/login.css">
+               <graphic>
+                  <FontAwesomeIconView fx:id="glyphExit" glyphName="TIMES" size="15" />
+               </graphic>
+            </Button>
+            <Label fx:id="lblProduct" alignment="CENTER" layoutX="22.0" layoutY="48.0" prefHeight="27.0" prefWidth="390.0" text="General Purchasing">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblAddress" alignment="CENTER" layoutX="-1.0" layoutY="76.0" prefHeight="17.0" prefWidth="412.0" text="Guanzon Bldg., Perez Blvd., Dagupan City 2400 Pangasinan" textAlignment="CENTER" textFill="#979797" />
+            <Label fx:id="lblTelephone" alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="17.0" prefWidth="412.0" text="Tel No. 075 522-1097 Fax No. 075 522-9275" textAlignment="CENTER" textFill="#979797" />
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

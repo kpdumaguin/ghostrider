@@ -1,0 +1,72 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 13, 2015, 12:29:52 AM
+    Author     : rifat
+*/
+
+/*******************************************************************************
+ *                                                                             *
+ * TextView                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.text-field{
+    -fx-border-width: 0.7px;
+    -fx-border-color: #000000;
+    -fx-border-radius: 60px;
+    -fx-background-radius: 60px;
+    -fx-text-fill: black;
+    -fx-font-size: 15px; 
+    -fx-padding: 5px 35px 5px 15px;
+    -fx-background-color: white;
+}
+.text-field:focused{
+    -fx-border-color: #F88222;
+
+}
+.text-field:hover{
+
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Combo Box                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+#cboProduct{
+    -fx-border-color:#000000;
+    -fx-border-width:1;
+    -fx-border-radius: 60px;
+    -fx-background-radius: 60px;
+    -fx-background-color:white;
+    -fx-prompt-text-fill: gray;
+    -fx-font-size: 15px; 
+}
+#cboProduct:focused{
+    -fx-border-color: #F88222;
+
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ButtonView                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+#glyphExit{
+    -fx-fill: #9e9e9e;
+}
+#btnExit{
+    -fx-border-width: 0px 0px 0px 5px;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+    -fx-background-color: #000000;
+}
+#btnExit:hover #glyphExit{
+    -fx-fill: #F88222;
+}

@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ghostrider;
+package org.rmj.ghostrider.ui;
 
-import ghostrider.controller.LoginController;
 import java.sql.ResultSet;
 import javafx.application.Application;
 import static javafx.application.Application.launch;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ghostrider;
+package org.rmj.ghostrider.ui;
 
 import java.awt.Insets;
 import java.util.Optional;

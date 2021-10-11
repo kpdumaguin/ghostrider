@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ghostrider;
+package org.rmj.ghostrider.ui;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import org.rmj.ghostrider.ui.GRiderDialog;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,6 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -51,17 +54,19 @@ public class LoginController implements Initializable {
     @FXML
     private Button btnLogin;
     @FXML
+    private Button cmdCancel;
+    @FXML
     private Label lblAddress;
     @FXML
     private Label lblTelephone;
+    @FXML
+    private AnchorPane acMain;
     @FXML
     private PasswordField txtPassword;
     @FXML
     private TextField txtUserName;
     @FXML
     private ComboBox cboProduct;
-    @FXML
-    private AnchorPane mainBackground;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -88,6 +93,7 @@ public class LoginController implements Initializable {
         if (pnRetry >= 3) unloadScene(event);
     }
 
+    @FXML
     private void cmdCancel(ActionEvent event) {
         unloadScene(event);
     }

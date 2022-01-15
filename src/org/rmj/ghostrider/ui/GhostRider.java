@@ -53,28 +53,7 @@ public class GhostRider extends Application {
         String lsUserIDxx = loCon.getUserIDxx();
         String lsProdctID = loCon.getProductID();
         
-        if (!lsProdctID.equals("") && !lsUserIDxx.equals("")){
-            GRider loGRider = new GRider(lsProdctID);
-            GProperty loProp = new GProperty("GhostRiderXP");
-            if (!loGRider.loadEnv(lsProdctID)) {
-                if (loGRider.getErrMsg().equals("")){
-                    ShowMessageFX.Error(loGRider.getMessage(), "Login", "Please inform MIS Department.");
-                    System.exit(1);
-                } else{
-                    ShowMessageFX.Warning(loGRider.getErrMsg(), "Login", "Please inform MIS Department.");
-                    System.exit(0);
-                }
-            }
-            if (!loGRider.logUser(lsProdctID, lsUserIDxx)) {
-                if (loGRider.getErrMsg().equals("")){
-                    ShowMessageFX.Error(loGRider.getMessage(), "Login", "Please inform MIS Department.");
-                    System.exit(1);
-                } else{
-                    ShowMessageFX.Warning(loGRider.getErrMsg(), "Login", "Please inform MIS Department.");
-                    System.exit(0);
-                }
-            }
-            
+        if (!lsProdctID.equals("") && !lsUserIDxx.equals("")){            
             String lsAppPath = "";
             String lsAppName = "";
             
@@ -91,8 +70,8 @@ public class GhostRider extends Application {
                                     " AND c.sProdctID = d.sProdctID" +
                                     " AND a.sProjctID = d.sProjctID" +
                                     " AND d.nEntryNox = 2" + //2 = java programs
-                                    " AND a.sClientID = " + SQLUtil.toSQL(loGRider.getClientID()) +
-                                    " AND a.sProdctID = " + SQLUtil.toSQL(lsProdctID);
+                                    " AND a.sClientID = " + SQLUtil.toSQL(poGRider.getClientID()) +
+                                    " AND a.sProdctID = " + SQLUtil.toSQL(lsProdctID);                                    
             
             ResultSet loRS = poGRider.executeQuery(lsSQL);
             
@@ -105,7 +84,7 @@ public class GhostRider extends Application {
                 lsAppName = loRS.getString("sApplName");
             }
             
-            String lsApplication = lsAppPath + lsAppName + " " + loGRider.getProductID() + " " + loGRider.getUserID();
+            String lsApplication = lsAppPath + lsAppName + " " + lsProdctID + " " + lsUserIDxx;
                 
             if (lsApplication.equals("")){
                 ShowMessageFX.Warning("Application was not set...", "Login", "Please inform MIS Department.");
@@ -114,6 +93,8 @@ public class GhostRider extends Application {
                 Runtime re = Runtime.getRuntime();    
                 re.exec(lsApplication); 
             }   
+            
+            MiscUtil.close(loRS);
         }
         stage.close();
     }
@@ -122,10 +103,19 @@ public class GhostRider extends Application {
         launch(args);
     }
     
-    public boolean isLoggedIn(){return pbLoggedIn;}
-    public void setGRider(GRider foGRider){this.poGRider = foGRider;}
-    public void setGProperty(GProperty foProperty){this.poProperty = foProperty;}
-    public void setProdctID(String fsProdctID){this.psProdctID = fsProdctID;}
+    public boolean isLoggedIn(){
+        return pbLoggedIn;
+    }
+    
+    public void setGRider(GRider foGRider){
+        this.poGRider = foGRider;
+    }
+    public void setGProperty(GProperty foProperty){
+        this.poProperty = foProperty;
+    }
+    public void setProdctID(String fsProdctID){
+        this.psProdctID = fsProdctID;
+    }
     
     private boolean pbLoggedIn = false;
     public static GRider poGRider;

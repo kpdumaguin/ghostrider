@@ -65,7 +65,7 @@ and open the template in the editor.
     -fx-border-width: 0px 0px 0px 5px;
     -fx-border-radius: 0px;
     -fx-background-radius: 0px;
-    -fx-background-color: #000000;
+    -fx-background-color: transparent;
 }
 #btnExit:hover #glyphExit{
     -fx-fill: #F88222;

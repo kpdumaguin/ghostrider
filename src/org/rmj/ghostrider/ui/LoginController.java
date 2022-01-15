@@ -122,11 +122,10 @@ public class LoginController implements Initializable {
     }
     
     private void initForm(){
-//        lblProduct.setText("");
         lblAddress.setText("");
         lblTelephone.setText("");
         
-//        lblProduct.setText(poGRider.getBranchName());
+        lblProduct.setText(poGRider.getProductName());
         lblAddress.setText(poGRider.getAddress() + ", " + poGRider.getTownName() + " " + poGRider.getProvince());
         if (!poGRider.getTelNo().equals("")) lblTelephone.setText("Tel. No. " + poGRider.getTelNo() + " ");
         if (!poGRider.getFaxNo().equals("")) lblTelephone.setText(lblTelephone.getText() + "Fax No. " + poGRider.getFaxNo());
@@ -144,7 +143,6 @@ public class LoginController implements Initializable {
                             " AND b.nEntryNox = '2'" + //2 = Java programs
                             " AND c.sClientID = " + SQLUtil.toSQL(poGRider.getClientID()) +
                         " ORDER BY b.sProdctNm";
-                            //" AND a.sProdctID <> " + SQLUtil.toSQL(xeDriverID);
         
         //if product id is specified, load it as the main app
         if (!psProdctID.equals("")) lsSQL = MiscUtil.addCondition(lsSQL, "a.sProdctID = " + SQLUtil.toSQL(psProdctID));
@@ -215,19 +213,31 @@ public class LoginController implements Initializable {
                 loRS.first();
                 if (MiscUtil.RecordCount(loRS) == 1){
                     loRS.first();
-                    if (loRS.getString("sProdctID").equals(psProdctID)){
-                        lbLogged = true;
-                    }
+                    if (psProdctID.equalsIgnoreCase("integsysn")){
+                        if (loRS.getString("sProdctID").equals("IntegSys")){
+                            lbLogged = true;
+                        }
+                    } else {
+                        if (loRS.getString("sProdctID").equals(psProdctID)){
+                            lbLogged = true;
+                        }
+                    }                    
                 }else{
                     loRS.first();
                     while(loRS.next()){   
-                        System.out.println("««««« USER ACCOUNT »»»»»");
-                        System.out.println("USER ID: " + loRS.getString("sUserIDxx"));
-                        System.out.println("PRODUCT ID: " + loRS.getString("sProdctID"));
-                        System.out.println("------------------------");
-                        if (loRS.getString("sProdctID").equals(psProdctID)){
-                            lbLogged = true; break;
-                        }
+                        //System.out.println("««««« USER ACCOUNT »»»»»");
+                        //System.out.println("USER ID: " + loRS.getString("sUserIDxx"));
+                        //System.out.println("PRODUCT ID: " + loRS.getString("sProdctID"));
+                        //System.out.println("------------------------");
+                        if (psProdctID.equalsIgnoreCase("integsysn")){
+                            if (loRS.getString("sProdctID").equals("IntegSys")){
+                                lbLogged = true; break;
+                            }
+                        } else {
+                            if (loRS.getString("sProdctID").equals(psProdctID)){
+                                lbLogged = true; break;
+                            }
+                        }                    
                     }
                     loRS.beforeFirst();
                     loRS.first();
@@ -279,9 +289,17 @@ public class LoginController implements Initializable {
     public String getProductID(){return psProdctID;}
     public String getUserIDxx(){return psUserIDxx;}
     
-    public void setGRider(GRider foGRider){this.poGRider = foGRider;}
-    public void setGProperty(GProperty foProperty){this.poProperty = foProperty;}
-    public void setProdctID(String fsProdctID){this.psProdctID = fsProdctID;}
+    public void setGRider(GRider foGRider){
+        poGRider = foGRider;
+    }
+    
+    public void setGProperty(GProperty foProperty){
+        poProperty = foProperty;
+    }
+    
+    public void setProdctID(String fsProdctID){
+        psProdctID = fsProdctID;
+    }
     
     private static final String xeDriverID = "GRider";
     private final String pxeModuleName = "LoginController";

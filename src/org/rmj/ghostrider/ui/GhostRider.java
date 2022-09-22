@@ -84,12 +84,15 @@ public class GhostRider extends Application {
                 lsAppName = loRS.getString("sApplName");
             }
             
+            if (lsProdctID.equalsIgnoreCase("integsysn")) lsProdctID = "IntegSys";
+            
             String lsApplication = lsAppPath + lsAppName + " " + lsProdctID + " " + lsUserIDxx;
                 
             if (lsApplication.equals("")){
                 ShowMessageFX.Warning("Application was not set...", "Login", "Please inform MIS Department.");
                 System.exit(0);
             } else{
+                System.out.println(lsApplication);
                 Runtime re = Runtime.getRuntime();    
                 re.exec(lsApplication); 
             }   

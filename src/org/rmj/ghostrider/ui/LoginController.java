@@ -18,7 +18,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -147,6 +146,7 @@ public class LoginController implements Initializable {
         //if product id is specified, load it as the main app
         if (!psProdctID.equals("")) lsSQL = MiscUtil.addCondition(lsSQL, "a.sProdctID = " + SQLUtil.toSQL(psProdctID));
         
+        System.out.println(lsSQL);
         ResultSet loRS = poGRider.executeQuery(lsSQL);
                 
         ObservableList<String> laIDx = FXCollections.observableArrayList();
@@ -230,11 +230,11 @@ public class LoginController implements Initializable {
                         //System.out.println("PRODUCT ID: " + loRS.getString("sProdctID"));
                         //System.out.println("------------------------");
                         if (psProdctID.equalsIgnoreCase("integsysn")){
-                            if (loRS.getString("sProdctID").equals("IntegSys")){
+                            if (loRS.getString("sProdctID").equalsIgnoreCase("integsys")){
                                 lbLogged = true; break;
                             }
                         } else {
-                            if (loRS.getString("sProdctID").equals(psProdctID)){
+                            if (loRS.getString("sProdctID").equalsIgnoreCase(psProdctID)){
                                 lbLogged = true; break;
                             }
                         }                    

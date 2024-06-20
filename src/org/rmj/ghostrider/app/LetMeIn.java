@@ -9,7 +9,6 @@ import org.rmj.ghostrider.ui.GhostRider;
 import javafx.application.Application;
 import org.rmj.appdriver.GProperty;
 import org.rmj.appdriver.GRider;
-import org.rmj.appdriver.MiscUtil;
 import org.rmj.appdriver.agent.GRiderX;
 
 /**
